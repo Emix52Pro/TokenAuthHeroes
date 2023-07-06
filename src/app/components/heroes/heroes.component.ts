@@ -12,7 +12,7 @@ export class HeroesComponent {
   heroes:Heroe[]=[]
 
   ngOnInit(): void{
-
+  window.scrollTo(0, 0);
   this.heroes = this._heroesService.getHeroes();
   console.log(this.heroes);
   }
