@@ -11,6 +11,7 @@ import { AboutComponent } from './components/about/about.component';
 //importar servicios
 import { HeroesService } from './services/heroes.service';
 import { HeroeComponent } from './components/heroe/heroe.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeroeComponent } from './components/heroe/heroe.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [HeroesService],
   bootstrap: [AppComponent]
