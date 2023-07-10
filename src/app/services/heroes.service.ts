@@ -1,12 +1,12 @@
+
 import { Injectable } from '@angular/core';
-
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroesService {
-  
+  public search_string:string = '';
+  public heroes2:Heroe[]=[];
   private heroes:Heroe[]=[
     {
       nombre: "Aquaman",
@@ -64,9 +64,15 @@ export class HeroesService {
   {
     return this.heroes;
   }
+
+  getHeroes2()
+  {
+    return this.heroes2;
+  }
   
   constructor() { 
     console.log("Servicio listo para usar...");
+    console.log( this.search_string);
   
   }
   

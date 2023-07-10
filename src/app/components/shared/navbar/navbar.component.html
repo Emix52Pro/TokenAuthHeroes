@@ -20,8 +20,9 @@
                 </li>
             </ul>
             <form>
-                <input type="text" placeholder="Filter by Name" #filter>
-                <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+                <input type="text" placeholder="Filtro Por Nombre" #filter>
+                <button class="primary" type="button" (click)="updateSearchString(filter.value);">Search</button>
+
             </form>
         </div>
     </div>

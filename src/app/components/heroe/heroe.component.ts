@@ -18,6 +18,7 @@ constructor(private activatedRoute: ActivatedRoute, private _heroeService:Heroes
 }
 
 
+
 ngOnInit(): void {
   window.scrollTo(0, 0);
 }

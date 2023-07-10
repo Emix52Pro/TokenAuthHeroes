@@ -12,6 +12,8 @@ import { AboutComponent } from './components/about/about.component';
 //importar servicios
 import { HeroesService } from './services/heroes.service';
 import { HeroeComponent } from './components/heroe/heroe.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { HeroeComponent } from './components/heroe/heroe.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [HeroesService],
