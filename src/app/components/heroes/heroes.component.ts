@@ -32,7 +32,7 @@ export class HeroesComponent implements OnDestroy {
   }
   ngOnInit(): void {
 
-    this.heroes2 = this._heroesService.getHeroes();
+    this.heroes2 = this._heroesService.getHeroes2();
   }
 
   ngOnDestroy(): void {

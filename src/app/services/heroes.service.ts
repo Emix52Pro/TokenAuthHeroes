@@ -82,6 +82,7 @@ export class HeroesService {
   }
   
   constructor() { 
+    this.heroes2 = this.heroes;
     console.log("Servicio listo para usar...");
     console.log( this.search_string);
   
