@@ -36,7 +36,7 @@ export class NavbarComponent {
     }
 
     // Actualizar la variable en el servicio
-    this._heroesService.heroes2 = this.heroes2;
+    this._heroesService.updateHeroes2(this.heroes2);
     this.router.navigate(['/heroes']);
   }
 }

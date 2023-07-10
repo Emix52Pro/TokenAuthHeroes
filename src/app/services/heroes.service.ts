@@ -1,5 +1,6 @@
 
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +60,16 @@ export class HeroesService {
     }
   ];
   
+  private heroes2S: BehaviorSubject<Heroe[]> = new BehaviorSubject<Heroe[]>([]);
+  
+  getHeroes2Observable(): Observable<Heroe[]> {
+    return this.heroes2S.asObservable();
+  }
+
+  updateHeroes2(heroes2: Heroe[]): void {
+    this.heroes2 = heroes2;
+    this.heroes2S.next(this.heroes2);
+  }
 
   getHeroes()
   {
