@@ -1,8 +1,12 @@
 <h1>Heroes <small>Marvel y DC</small></h1>
 <hr>
+<form>
+    <input type="text" placeholder="Filter by Name" #filter>
+    <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+</form>
 <div class="row">
     <div class="col animated fadeIn fast d-flex flex-wrap">
-        <div class="card mb-3 mx-2" style="max-width: 540px;" *ngFor="let heroe of heroes; let i = index">
+        <div class="card mb-3 mx-2" style="max-width: 540px;" *ngFor="let heroe of heroes2; let i = index">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img [src]="heroe.img" class="img-fluid rounded-start" alt="...">
