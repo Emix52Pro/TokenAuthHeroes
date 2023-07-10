@@ -77,7 +77,7 @@ export class HeroesService {
   }
   
   getHeroe(idx: number):Heroe{
-    return this.heroes[idx];
+    return this.heroes2[idx];
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { HeroesService, Heroe } from 'src/app/services/heroes.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class NavbarComponent {
   heroes: Heroe[] = [];
   heroes2: Heroe[] = [];
 
-  constructor(private _heroesService: HeroesService) {
+  constructor(private _heroesService: HeroesService, private router: Router) {
     this.heroes = this._heroesService.getHeroes();
     this.heroes2 = this.heroes;
   }
@@ -36,5 +37,6 @@ export class NavbarComponent {
 
     // Actualizar la variable en el servicio
     this._heroesService.heroes2 = this.heroes2;
+    this.router.navigate(['/heroes']);
   }
 }
