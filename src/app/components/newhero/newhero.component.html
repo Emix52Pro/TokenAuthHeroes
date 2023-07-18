@@ -1,1 +1,49 @@
-<p>newhero works!</p>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div class="card" style="width: 27rem;">
+        <div class="card-body">
+            <form (ngSubmit)="agregarHeroe()">
+
+                <div>
+                    <label for="nombre"><h2>Nombre:</h2></label>
+                    <br>
+                    <input type="text" style="width: 400px;" id="nombre" [(ngModel)]="nuevoHeroe.nombre" name="nombre" required>
+                </div>
+                <br> <br>
+                <div>
+                    <label for="bio"><h2>Biografía:</h2></label>
+                    <br>
+                    <textarea id="bio" style="width: 400px;" [(ngModel)]="nuevoHeroe.bio" name="bio" required></textarea>
+                </div>
+                <br> <br>
+                <div>
+                    <label for="img"><h2>Imagen:</h2></label>
+                    <br>
+                    <input type="file" id="bio" style="width: 400px;" accept="image/*,.pdf" [(ngModel)]="nuevoHeroe.img" name="img" required/>
+
+                </div>
+                <br> <br>
+                <div>
+                    <label for="aparicion"><h2>Aparición:</h2> </label>
+                    <br>
+                    <input type="date" id="aparicion" style="width: 400px;" [(ngModel)]="nuevoHeroe.aparicion" name="aparicion" required>
+                </div>
+                <br> <br>
+                <div>
+                    <label for="casa"><h2>Casa:</h2> </label>
+                    <br>
+                    <select id="casa" style="width: 400px;" [(ngModel)]="nuevoHeroe.casa" name="casa" required>
+                  <option value="Marvel">Marvel</option>
+                  <option value="DC">DC</option>
+                </select>
+                </div>
+                <br> <br>
+                <div>
+                    <button class="button button2" type="submit">Agregar héroe</button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+</div>
