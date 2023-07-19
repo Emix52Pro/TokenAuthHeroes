@@ -15,6 +15,11 @@ import { HeroeComponent } from './components/heroe/heroe.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NewheroComponent } from './components/newhero/newhero.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -24,13 +29,17 @@ import { NewheroComponent } from './components/newhero/newhero.component';
     HeroesComponent,
     AboutComponent,
     HeroeComponent,
-    NewheroComponent
+    NewheroComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
   providers: [HeroesService],
   bootstrap: [AppComponent]
