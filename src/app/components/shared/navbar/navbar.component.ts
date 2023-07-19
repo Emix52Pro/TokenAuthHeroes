@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HeroesService, Heroe } from 'src/app/services/heroes.service';
 import { UserService } from 'src/app/services/user.service';
 
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,7 +13,7 @@ export class NavbarComponent {
   heroes: Heroe[] = [];
   heroes2: Heroe[] = [];
 
-  constructor(private _heroesService: HeroesService, private router: Router, private userService: UserService ) {
+  constructor(private _heroesService: HeroesService, private router: Router, public userService: UserService ) {
     this.heroes = this._heroesService.getHeroes();
     this.heroes2 = this.heroes;
   }
@@ -40,11 +41,19 @@ export class NavbarComponent {
     this._heroesService.updateHeroes2(this.heroes2);
     this.router.navigate(['/heroes']);
   }
+  
+  buttonconf(){
+    if (this.userService.isloggedin() == true) {
+
+    }else{
+
+    }
+  }
 
   onClick() {
     this.userService.logout()
       .then(() => {
-        this.router.navigate(['/register']);
+        this.router.navigate(['/login']);
       })
       .catch(error => console.log(error));
   }

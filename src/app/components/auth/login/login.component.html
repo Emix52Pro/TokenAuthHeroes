@@ -1,13 +1,24 @@
-<h2>Login de usuario</h2>
-<form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="text" class="form-control" formControlName="email">
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh;">
+
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+            <h2>Login de usuario</h2>
+            <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" formControlName="email">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" formControlName="password">
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <input type="submit" value="Enviar" class="btn btn-primary">
+                    <button class="btn btn-info" (click)="onClick()" style="margin-left: 10px;">Login With Google</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" formControlName="password">
-    </div>
-    <input type="submit" value="Enviar">
-</form>
-<button class="btn btn-info" (click)="onClick()">Login With Google</button>
+
+    <button class="btn btn-info" (click)="irRegis()" style="width: 30rem; margin-top: 10px;">Registrarse</button>
+</div>

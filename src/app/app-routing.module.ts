@@ -13,8 +13,8 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { LoginComponent } from './components/auth/login/login.component';
 
 const routes: Routes = [
-{path: 'home', component: HomeComponent}, {path: 'about', component: AboutComponent}, {path: 'newhero', component: NewheroComponent, ...canActivate(() => redirectUnauthorizedTo(['/register']))},
-{path: 'heroes', component: HeroesComponent, ...canActivate(() => redirectUnauthorizedTo(['/register']))}, { path: 'register', component: RegisterComponent },
+{path: 'home', component: HomeComponent}, {path: 'about', component: AboutComponent}, {path: 'newhero', component: NewheroComponent, ...canActivate(() => redirectUnauthorizedTo(['/login']))},
+{path: 'heroes', component: HeroesComponent, ...canActivate(() => redirectUnauthorizedTo(['/login']))}, { path: 'register', component: RegisterComponent },
 { path: 'login', component: LoginComponent }, {path: 'heroe/:id', component: HeroeComponent}, 
 {path: '**', pathMatch:'full', redirectTo: 'home'},  
 
