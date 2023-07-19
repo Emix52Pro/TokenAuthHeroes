@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeroesService, Heroe } from 'src/app/services/heroes.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,7 @@ export class NavbarComponent {
   heroes: Heroe[] = [];
   heroes2: Heroe[] = [];
 
-  constructor(private _heroesService: HeroesService, private router: Router) {
+  constructor(private _heroesService: HeroesService, private router: Router, private userService: UserService ) {
     this.heroes = this._heroesService.getHeroes();
     this.heroes2 = this.heroes;
   }
@@ -38,5 +39,13 @@ export class NavbarComponent {
     // Actualizar la variable en el servicio
     this._heroesService.updateHeroes2(this.heroes2);
     this.router.navigate(['/heroes']);
+  }
+
+  onClick() {
+    this.userService.logout()
+      .then(() => {
+        this.router.navigate(['/register']);
+      })
+      .catch(error => console.log(error));
   }
 }
